@@ -1,10 +1,7 @@
 package com.oro.model3.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +16,7 @@ public class Subject {
     private long id;
 
     @ManyToOne
-    private Identifier identifier;
+    private UserProfile presenter;
 
     @Column(unique = true)
     private String title;

@@ -42,4 +42,8 @@ public class UserProfile {
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "userProfile", cascade = CascadeType.ALL)
     private List<Identifier> identifierList;
+
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "presenter", cascade = CascadeType.ALL)
+    private List<Subject> subjectList;
 }
