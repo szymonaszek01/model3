@@ -53,8 +53,8 @@ public class Initializer implements CommandLineRunner {
         seatRepository.saveAll(seatList);
         conferenceRepository.saveAll(conferenceList);
         userProfileRepository.saveAll(userProfileList);
-        subjectRepository.saveAll(subjectList);
         identifierRepository.saveAll(identifierList);
+        subjectRepository.saveAll(subjectList);
     }
 
     private void initializeAuditoriumList() {
@@ -102,9 +102,10 @@ public class Initializer implements CommandLineRunner {
     private void initializeSubjectList() {
         subjectList.addAll(
                 Arrays.asList(
-                        Subject.builder().id(1L).title("title1").description("description1").conference(conferenceList.get(0)).build(),
-                        Subject.builder().id(2L).title("title2").description("description2").conference(conferenceList.get(1)).build(),
-                        Subject.builder().id(3L).title("title3").description("description3").conference(conferenceList.get(2)).build()
+                        Subject.builder().id(1L).title("title1").description("description1").conference(conferenceList.get(0)).presenter(userProfileList.get(0)).build(),
+                        Subject.builder().id(2L).title("title2").description("description2").conference(conferenceList.get(1)).presenter(userProfileList.get(1)).build(),
+                        Subject.builder().id(3L).title("title3").description("description3").conference(conferenceList.get(2)).presenter(userProfileList.get(2)).build(),
+                        Subject.builder().id(4L).title("title4").description("description4").conference(conferenceList.get(0)).presenter(userProfileList.get(0)).build()
                 )
         );
     }
